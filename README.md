@@ -4,7 +4,7 @@
 ## Contents
 - [Docker](docker_cheatsheet.md);
 - [DevOps](devops.md);
-- [Python](python_cheatsheet.md);
+- [Python](python.md);
 - [Git](git_cheatsheet.md);
 - [Linux](linux_cheatsheet.md);
 - [CyberSecurity](cybersecurity.md);
