@@ -1,7 +1,4 @@
 # Kit
-## Introduction
-База знаний ИТ.
-
 
 :white_square_button: [Docker](materials/docker.md)
 
@@ -17,14 +14,20 @@
 
 🪟 [Windows](materials/windows.md)
 
-:luc_alert_circle:  [CyberSecurity](materials/cybersecurity.md)
+🔒 [CyberSecurity](materials/cybersecurity.md)
 
-- [Information security](materials/infosec.md)
-- [Cryptography](materials/crypto.md)
-- [Computer networks](materials/networks.md)
-- [VPN](materials/vpn.md)
-- [SSH](materials/ssh.md)
-- [Anon](materials/anon.md) - todo
+🧑‍💻 [Information security](materials/infosec.md)
 
-- [Sources](materials/links.md)
-- [Glossary](materials/glossary.md)
+💻 [Cryptography](materials/crypto.md)
+
+📡 [Computer networks](materials/networks.md)
+
+🧑‍💻 [VPN](materials/vpn.md)
+
+🧑‍💻 [SSH](materials/ssh.md)
+
+🙍‍♀️ [Anon](materials/anon.md)
+
+ℹ️ [Sources](materials/links.md)
+
+📑 [Glossary](materials/glossary.md)
