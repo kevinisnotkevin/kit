@@ -3,16 +3,14 @@
 База знаний ИТ.
 
 
-
-## Contents
-- [Docker](materials/docker.md)
-- [Linux Containers](materials/lxc.md)
-- [DevOps](materials/devops.md)
-- [Python](materials/python.md)
-- [Git](materials/git.md)
-- [Linux](materials/linux.md)
-- [Windows](materials/windows.md)
-- [CyberSecurity](materials/cybersecurity.md)
+:luc_box: [Docker](materials/docker.md)
+:luc_box: [Linux Containers](materials/lxc.md)
+:luc_git_commit: [DevOps](materials/devops.md)
+:luc_command: [Python](materials/python.md)
+:luc_github: [Git](materials/git.md)
+:luc_terminal_square: [Linux](materials/linux.md)
+🪟 [Windows](materials/windows.md)
+:luc_alert_circle:  [CyberSecurity](materials/cybersecurity.md)
 - [Information security](materials/infosec.md)
 - [Cryptography](materials/crypto.md)
 - [Computer networks](materials/networks.md)
