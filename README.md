@@ -3,12 +3,12 @@
 База знаний ИТ.
 
 
-:luc_box: [Docker](materials/docker.md)
-:luc_box: [Linux Containers](materials/lxc.md)
-:luc_git_commit: [DevOps](materials/devops.md)
-:luc_command: [Python](materials/python.md)
-:luc_github: [Git](materials/git.md)
-:luc_terminal_square: [Linux](materials/linux.md)
+:white_square_button: [Docker](materials/docker.md)
+:white_square_button: [Linux Containers](materials/lxc.md)
+:chains: [DevOps](materials/devops.md)
+:snake: [Python](materials/python.md)
+🔗 [Git](materials/git.md)
+🐧 [Linux](materials/linux.md)
 🪟 [Windows](materials/windows.md)
 :luc_alert_circle:  [CyberSecurity](materials/cybersecurity.md)
 - [Information security](materials/infosec.md)
