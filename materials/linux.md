@@ -1805,7 +1805,7 @@ history 20
 history -c
 ```
 
-#### :obs_command_glyph: locate
+#### locate
 
 ```bash
 # Найти файл по названию без учета регистра
@@ -1815,7 +1815,9 @@ locate -i file.txt
 updatedb
 ```
 
-#### :obs_command_glyph: man
+#### man
+:luc_code: 
+:luc_figma: 
 
 Самой известной справочной системой, сопровождающей UNIX практически с момента ее рождения, является справочная система страниц руководства, информация из которой доступна при помощи команд `man`, `apropos` и `whatis`.
 
@@ -1890,7 +1892,7 @@ man ls
 man 2 fork
 ```
 
-#### :obs_command_glyph: mount
+#### mount
 
 ```bash
 # Монтировать раздел hda2 в точку монтирования /mnt/hda2
