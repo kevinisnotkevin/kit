@@ -103,7 +103,20 @@
 - https://rev-kids20.forkbomb.ru/tasks
 - https://www.coursera.org/learn/crypto
 - https://book.hacktricks.xyz
+- https://github.com/hubert3/iSniff-GPS/tree/master: Утилита, которая определяет местоположение по MAC-адресу. Разработана на Gjango
 
+Linux:
+- tldr pages — сок­ращен­ная вер­сия man, в которой дотош­ные опи­сания пок­ромса­ли до абсо­лют­ного миниму­ма (под­робнее);
+- [cheat.sh](http://cheat.sh/) — онлай­новая база дан­ных с при­мера­ми популяр­ных вари­антов команд (под­робнее);
+- Marker — похожая шту­ка, но офлай­новая и с под­сказ­ками «на лету» (под­робнее);
+- [explainshell.com](http://explainshell.com/) — сер­вис, который авто­мати­чес­ки раз­бира­ет слож­ную коман­ду и объ­ясня­ет зна­чение ее сос­тавных час­тей.
+- За­пом­нить все парамет­ры всех команд невоз­можно, поэто­му даже заяд­лые линук­соиды при­бега­ют к таким хит­ростям (и неус­танно изоб­рета­ют всё новые)!
+
+
+1. Что такое UUID?
+2. Что такое init?
+3. Что такое init=/bin/bash?
+4. Что такое sysrq-trigger?
 
 ## Other
 - HTTP caching, HTTP auth, HTTP cookies, HTTP redirects, HTTP range requests, HTTP content negotiation
