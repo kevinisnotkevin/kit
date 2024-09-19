@@ -1,7 +1,9 @@
 # Python
 Version: 3.12.3
 
-## Contents
+# 💧 Контент
+
+## 🌟 Основа
 
 - [Introduction](#introduction)
 - [Operators](#Operators)
@@ -21,224 +23,292 @@ Version: 3.12.3
 - [Args & Kwargs](#Args-&-Kwargs)
 - [Environment Variables](#environment-variables)
 - [Virtual Environments](#virtual-environments)
-- Modules
-	- Обработка текста
-		- [__string__](materials/python/md/text_processing.md#string): Общие строковые операции
-		- [__re__](materials/python/md/text_processing.md#re): Операции с регулярными выражениями
-		- [__difflib__](materials/python/md/text_processing.md#difflib): Помощники для вычисления дельт
-		- [__textwrap__](materials/python/md/text_processing.md#textwrap): Перенос и заполнение текста
-		- [__unicodedata__](materials/python/md/text_processing.md#unicodedata): База данных Юникод
-		- [__stringprep__](materials/python/md/text_processing.md#stringprep): Подготовка интернет-строки
-		- [__readline__](materials/python/md/text_processing.md#readline): Интерфейс чтения GNU
-		- [__rlcompleter__](materials/python/md/text_processing.md#rlcompleter): Функция завершения для строки чтения GNU
-	- Двоичные данные
-		- [__struct__](materials/python/md/binary.md#struct): Интерпретирование байтов, как упакованные двоичные данные
-		- [__codecs__](materials/python/md/binary.md#codecs): Реестр кодеков и базовые классыs
-	- Типы данных
-		- [__datetime__](materials/python/md/datatypes.md#datetime): Основные типы даты и времени;
-		- [__zoneinfo__](materials/python/md/datatypes.md#zoneinfo): Поддержка часовых поясов IANA;
-		- [__calendar__](materials/python/md/datatypes.md#calendar): Общие функции, связанные с календарем;
-		- [__collections__](materials/python/md/datatypes.md#collections): Типы данных контейнера;
-		- [__heapq__](materials/python/md/datatypes.md#heapq): Алгоритм очереди в куче;
-		- [__bisect__](materials/python/md/datatypes.md#bisect): Алгоритм деления массива пополам;
-		- [__array__](materials/python/md/datatypes.md#array): Эффективные массивы числовых значений;
-		- [__weakref__](materials/python/md/datatypes.md#weakref): Слабые ссылки;
-		- [__types__](materials/python/md/datatypes.md#types): Динамическое создание типов и имена для встроенных типов;
-		- [__copy__](materials/python/md/datatypes.md#copy): Операции поверхностного и глубокого копирования;
-		- [__pprint__](materials/python/md/datatypes.md#pprint): Симпатичный принтер данных;
-		- [__reprlib__](materials/python/md/datatypes.md#reprlib): Альтернативная реализация repr();
-		- [__enum__](materials/python/md/datatypes.md#enum): Поддержка перечислений;
-		- [__graphlib__](materials/python/md/datatypes.md#graphlib): Функционал для работы с графоподобными структурами;
-	- Числа и математика
-		- [__numbers__](materials/python/md/numeric.md#numbers): Числовые абстрактные базовые классы;
-		- [__math__](materials/python/md/numeric.md#math): Математические функции;
-		- [__cmath__](materials/python/md/numeric.md#cmath): Математические функции для комплексных чисел;
-		- [__decimal__](materials/python/md/numeric.md#decimal): Десятичная арифметика с фиксированной запятой и с плавающей запятой;
-		- [__fractions__](materials/python/md/numeric.md#fractions): Рациональное число;
-		- [__random__](materials/python/md/numeric.md#random): Генерация псевдослучайных чисел;
-		- [__statistics__](materials/python/md/numeric.md#statistics): Функции математической статистики;
-	- Функциональное программирование
-		- [__itertools__](materials/python/md/functional.md#itertools): Функции, создающие итераторы для эффективного цикла;
-		- [__functools__](materials/python/md/functional.md#functools): Функции высшего порядка и операции над вызываемыми объектами;
-		- [__operator__](materials/python/md/functional.md#operator): Стандартные операторы как функции;
-	- Каталоги и файлы
-		- [__pathlib__](materials/python/md/filesys.md#pathlib): Пути к объектно-ориентированной файловой системе;
-		- [__fileinput__](materials/python/md/filesys.md#fileinput): Перебор строк из нескольких входных потоков;
-		- [__stat__](materials/python/md/filesys.md#stat): Интерпретация stat() результатов;
-		- [__filecmp__](materials/python/md/filesys.md#filecmp): Сравнение файлов и каталогов;
-		- [__tempfile__](materials/python/md/filesys.md#tempfile): Генерировать временные файлы и каталоги;
-		- [__glob__](materials/python/md/filesys.md#glob): Расширение шаблона пути в стиле Unix;
-		- [__fnmatch__](materials/python/md/filesys.md#fnmatch): Сопоставление шаблонов имен файлов Unix;
-		- [__linecache__](materials/python/md/filesys.md#linecache): Произвольный доступ к текстовым строкам;
-		- [__shutil__](materials/python/md/filesys.md#shutil): Высокоуровневые файловые операции;
-	- Сохранение данных
-		- [__pickle__](materials/python/md/persistence.md#pickle): Сериализация;
-		- [__copyreg__](materials/python/md/persistence.md#copyreg): Регистрация pickle функций поддержки;
-		- [__shelve__](materials/python/md/persistence.md#shelve): Сохранение объектов;
-		- [__marshal__](materials/python/md/persistence.md#marshal): Внутренняя сериализация объектов;
-		- [__dbm__](materials/python/md/persistence.md#dbm): Интерфейсы к «базам данных» Unix;
-		- [__sqlite3__](materials/python/md/persistence.md#sqlite3): Интерфейс DB-API 2.0 для SQLite;
-	- Сжатие и архивирование данных
-		- [__zlib__](materials/python/md/archiving.md#zlib): Сжатие, совместимое с gzip;
-		- [__gzip__](materials/python/md/archiving.md#gzip): Поддержка файлов gzip;
-		- [__bz2__](materials/python/md/archiving.md#bz2): Поддержка сжатия bzip2;
-		- [__lzma__](materials/python/md/archiving.md#lzma): Сжатие с использованием алгоритма LZMA;
-		- [__zipfile__](materials/python/md/archiving.md#zipfile): Работа с ZIP-архивами;
-		- [__tarfile__](materials/python/md/archiving.md#tarfile): Чтение и запись файлов tar-архива;
-	- Форматы файлов
-		- [__csv__](materials/python/md/archiving.md#csv): Чтение и запись CSV-файлов;
-		- [__configparser__](materials/python/md/archiving.md#configparser): Парсер конфигурационного файла;
-		- [__tomllib__](materials/python/md/archiving.md#tomllib): Разбор файлов TOML;
-		- [__netrc__](materials/python/md/archiving.md#netrc): обработка файлов netrc;
-		- [__plistlib__](materials/python/md/archiving.md#plistlib): Генерация и анализ .plist файлов Apple;
-	- Криптография
-		- [__hashlib__](materials/python/md/crypto.md#hashlib): Безопасные хэши и дайджесты сообщений;
-		- [__hmac__](materials/python/md/crypto.md#hmac): Хеширование ключей для аутентификации сообщений;
-		- [__secrets__](materials/python/md/crypto.md#secrets): Генерация безопасных случайных чисел для управления секретами;
-	- Службы ОС
-		- [__os__](materials/python/md/allos.md#os): Различные интерфейсы операционной системы;
-		- [__io__](materials/python/md/allos.md#io): Основные инструменты для работы с потоками;
-		- [__time__](materials/python/md/allos.md#time): Доступ ко времени и конверсии;
-		- [__argparse__](materials/python/md/allos.md#argparse): Анализатор параметров командной строки, аргументов и подкоманд;
-		- [__getopt__](materials/python/md/allos.md#): Синтаксический анализатор в стиле C для параметров командной строки;
-		- [__logging__](materials/python/md/allos.md#logging): Логирование;
-		- [__getpass__](materials/python/md/allos.md#getpass): Портативный ввод пароля;
-		- [__curses__](materials/python/md/allos.md#curses): Обработка терминала для отображения символьных ячеек;
-		- [__platform__](materials/python/md/allos.md#platform): Доступ к идентификационным данным базовой платформы;
-		- [__errno__](materials/python/md/allos.md#errno): Стандартные системные символы ошибок;
-		- [__ctypes__](materials/python/md/allos.md#ctypes): Сторонние функции;
-	- Параллельное выполнение
-		- [__threading__](materials/python/md/concurrency.md#threading): Потоковый параллелизм;
-		- [__multiprocessing__](materials/python/md/concurrency.md#multiprocessing): Параллелизм на основе процессов;
-		- [__concurrent__](materials/python/md/concurrency.md#concurrent): запуск параллельных задач;
-		- [__subprocess__](materials/python/md/concurrency.md#subprocess): Управление подпроцессами;
-		- [__sched__](materials/python/md/concurrency.md#sched): Планировщик событий;
-		- [__queue__](materials/python/md/concurrency.md#queue): Класс синхронизированной очереди;
-		- [__contextvars__](materials/python/md/concurrency.md#contextvars): Контекстные переменные;
-		- [__thread__](materials/python/md/concurrency.md#): Низкоуровневый API многопоточности;
-	- Сети и межпроцессное взаимодействие
-		- [__asyncio__](materials/python/md/ipc.md#asyncio): Асинхронный ввод-вывод;
-		- [__socket__](materials/python/md/ipc.md#socket): Низкоуровневый сетевой интерфейс;
-		- [__ssl__](materials/python/md/ipc.md#ssl): Оболочка TLS/SSL для объектов сокетов;
-		- [__select__](materials/python/md/ipc.md#select): Ожидание завершения ввода-вывода;
-		- [__selectors__](materials/python/md/ipc.md#selectors): Высокоуровневое мультиплексирование ввода-вывода;
-		- [__signal__](materials/python/md/ipc.md#signal): Установите обработчики асинхронных событий;
-		- [__mmap__](materials/python/md/ipc.md#mmap): Поддержка файлов, отображаемых в памяти;
-	- Обработка данных через Интернет
-		- [__email__](materials/python/md/netdata.md#email): Пакет обработки электронной почты и MIME;
-		- [__json__](materials/python/md/netdata.md#json): Кодер и декодер JSON;
-		- [__mailbox__](materials/python/md/netdata.md#mailbox): Работа с почтовыми ящиками различных форматов;
-		- [__mimetypes__](materials/python/md/netdata.md#mimetypes): Сопоставление имен файлов с типами MIME;
-		- [__base64__](materials/python/md/netdata.md#base64): Кодировки данных Base16, Base32, Base64, Base85;
-		- [__binascii__](materials/python/md/netdata.md#binascii): Преобразование между двоичным кодом и ASCII;
-		- [__quopri__](materials/python/md/netdata.md#quopri): Кодирование и декодирование MIME-данных, пригодных для печати;
-	- Обработка структурированной разметки
-		- [__html__](materials/python/md/markup.md#html): Поддержка языка гипертекстовой разметки;
-		- [__xml__](materials/python/md/markup.md#xml): Модули обработки XML;
-	- Интернет протоколы и поддержка
-		- [__webbrowser__](materials/python/md/internet.md#webbrowser): Контроллер веб-браузера;
-		- [__wsgiref__](materials/python/md/internet.md#wsgiref): Утилиты WSGI и эталонная реализация;
-		- [__urllib__](materials/python/md/internet.md#urllib): Модули обработки URL-адресов;
-		- [__http__](materials/python/md/internet.md#http): HTTP-модули;
-		- [__ftplib__](materials/python/md/internet.md#ftplib): Клиент FTP-протокола;
-		- [__poplib__](materials/python/md/internet.md#poplib): Клиент протокола POP3;
-		- [__imaplib__](materials/python/md/internet.md#imaplib): Клиент протокола IMAP4;
-		- [__smtplib__](materials/python/md/internet.md#smtplib): Клиент протокола SMTP;
-		- [__uuid__](materials/python/md/internet.md#uuid): Объекты UUID;
-		- [__socketserver__](materials/python/md/internet.md#socketserver): Фреймворк для сетевых серверов;
-		- [__xmlrpc__](materials/python/md/internet.md#xmlrpc): Серверные и клиентские модули XMLRPC;
-		- [__ipaddress__](materials/python/md/internet.md#ipaddress): Библиотека манипуляций IPv4/IPv6;
-	- Мультимедиа
-		- [__wave__](materials/python/md/mm.md#wave): Чтение и запись файлов WAV;
-		- [__colorsys__](materials/python/md/mm.md#colorsys): Преобразования между цветовыми системами;
-	- Интернализация
-		- [__gettext__](materials/python/md/i18n.md#gettext): Услуги многоязычной интернационализации;
-		- [__locale__](materials/python/md/i18n.md#locale): Услуги по интернационализации;
-	- Рамки программы
-		- [__turtle__](materials/python/md/frameworks.md#turtle): Графика черепахи;
-		- [__cmd__](materials/python/md/frameworks.md#cmd): Поддержка интерпретаторов строко-ориентированных команд;
-		- [__shlex__](materials/python/md/frameworks.md#shlex): Простой лексический анализ;
-	- Графические инструменты
-		- [__tkinter__](materials/python/md/tk.md#tkinter): Интерфейс Python для Tcl/Tk;
-	- Инструменты разработки
-		- [__typing__](materials/python/md/development.md#typing): Аннотации типов;
-		- [__pydoc__](materials/python/md/development.md#pydoc): Генератор документации и онлайн-справочная система;
-		- [__doctest__](materials/python/md/development.md#doctest): Тест интерактивных примеров;
-		- [__2to3__](materials/python/md/development.md#2to3): Автоматический перевод кода Python 2 на 3;
-		- [__unittest__](materials/python/md/development.md#unittest): Фреймворк модульного тестирования;
-		- [__test__](materials/python/md/development.md#test): Пакет регрессионных тестов для Python;
-	- Отладка и профилирование
-		- [__bdb__](materials/python/md/debug.md#bdb): Фреймворк отладчика;
-		- [__faulthandler__](materials/python/md/debug.md#faulthandler): Дамп обратной трассировки Python;
-		- [__pdb__](materials/python/md/debug.md#pdb): Отладчик Python;
-		- [__timeit__](materials/python/md/debug.md#timeit): Измерение времени выполнения небольших фрагментов кода;
-		- [__trace__](materials/python/md/debug.md#trace): Отслеживание или отслеживание выполнения операторов Python;
-		- [__tracemalloc__](materials/python/md/debug.md#tracemalloc): Отслеживание распределения памяти;
-	- Упаковка и распространение ПО
-		- [__ensurepip__](materials/python/md/distribution.md#ensurepip): Загрузка pip установщика;
-		- [__venv__](materials/python/md/distribution.md#venv): Создание виртуальных сред;
-		- [__zipapp__](materials/python/md/distribution.md#zipapp): Управление исполняемыми zip-архивами Python;
-	- Время выполнения Python
-		- [__sys__](materials/python/md/python.md#sys): Параметры и функции, специфичные для системы;
-		- [__sysconfig__](materials/python/md/python.md#sysconfig): Информация о конфигурации Python;
-		- [__builtins__](materials/python/md/python.md#builtins): Встроенные объекты;
-		- [__\_\_main__\_\_](materials/python/md/python.md#main): Среда кода верхнего уровня;
-		- [__warnings__](materials/python/md/python.md#warnings): Контроль предупреждения;
-		- [__dataclasses__](materials/python/md/python.md#dataclasses): Классы данных;
-		- [__contextlib__](materials/python/md/python.md#contextlib): Утилиты для with контекстов операторов;
-		- [__abc__](materials/python/md/python.md#abc): Абстрактные базовые классы;
-		- [__atexit__](materials/python/md/python.md#atexit): Обработчики выхода;
-		- [__traceback__](materials/python/md/python.md#traceback): Распечатать или получить обратную трассировку стека;
-		- [__\_\_future__\_\_](materials/python/md/python.md#future): Определения будущих операторов;
-		- [__gc__](materials/python/md/python.md#gc): Интерфейс сборщика мусора;
-		- [__inspect__](materials/python/md/python.md#inspect): Осмотр живых объектов;
-		- [__site__](materials/python/md/python.md#site): Перехватчик конфигурации для конкретного сайта;
-	- Пользовательские интерпретаторы
-		- [__code__](materials/python/md/custominterp.md#code): Базовые классы интерпретатора;
-		- [__codeop__](materials/python/md/custominterp.md#codeop): Скомпилировать код Python;
-	- Импорт модулей
-		- [__zipimport__](materials/python/md/modules.md#zipimport): Импорт модулей из Zip-архивов;
-		- [__pkgutil__](materials/python/md/modules.md#pkgutil): Утилита расширения пакета;
-		- [__modulefinder__](materials/python/md/modules.md#modulefinder): Найти модули, используемые скриптом;
-		- [__runpy__](materials/python/md/modules.md#runpy): Поиск и выполнение модулей Python;
-		- [__importlib__](materials/python/md/modules.md#importlib): Реализация import;
-	- Языковые службы
-		- [__ast__](materials/python/md/language.md#ast): Абстрактные синтаксические деревья;
-		- [__symtable__](materials/python/md/language.md#symtable): Доступ к таблицам символов компилятора;
-		- [__token__](materials/python/md/language.md#token): Константы, используемые с деревьями синтаксического анализа Python;
-		- [__keyword__](materials/python/md/language.md#keyword): Тестирование ключевых слов Python;
-		- [__tokenize__](materials/python/md/language.md#tokenize): Токенизатор для исходного кода Python;
-		- [__tabnanny__](materials/python/md/language.md#tabnanny): Обнаружение неоднозначного отступа;
-		- [__pyclbr__](materials/python/md/language.md#pyclbr): Поддержка браузера модуля Python;
-		- [__py_compile__](materials/python/md/language.md#py_compile): Скомпилируйте исходные файлы Python;
-		- [__compileall__](materials/python/md/language.md#compileall): Байт-компилируемые библиотеки Python;
-		- [__dis__](materials/python/md/language.md#dis): Дизассемблер для байт-кода Python;
-		- [__pickletools__](materials/python/md/language.md#pickletools): Инструменты для разработчиков Pickle;
-	- Сторонние модули
-		- [__Numpy__](materials/python/md/third_party_modules.md#numpy): Математические операции с многомерными массивами и матрицами;
-		- [__Pandas__](materials/python/md/third_party_modules.md#pandas): Анализ и обработка данных, машинное обучение, статистика;
-		- [__Matplotlib__](materials/python/md/third_party_modules.md#matplotlib): Визуализация данных в виде графиков и диаграмм;
-		- [__SciPy__](materials/python/md/third_party_modules.md#scipy): Научные и инженерные расчеты (оптимизация, интегрирование, интерполяция, обработка сигналов, статистика);
-		- [__TensorFlow__](materials/python/md/third_party_modules.md#tensorflow): Создание, обучение, развертывание моделей машинного обучения;
-		- [__Keras__](materials/python/md/third_party_modules.md#keras): Удобный способ создания моделей машинного обучения;
-		- [__Scikit-learn__](materials/python/md/third_party_modules.md#scikit-learn): Простые и эффективные инструменты для анализа данных и построения моделей;
-		- [__XGBoost__](materials/python/md/third_party_modules.md#XGBoost): Библиотека машинного обучения, основанная на методе градиентного бустинга;
-		- [__LightGBM__](materials/python/md/third_party_modules.md#LightGBM): Библиотека градиентного бустинга, разработанная для эффективного и быстрого обучения моделей на больших объемах данных;
-		- [__requests__](materials/python/md/third_party_modules.md#requests): Работа с HTTP протоколом;
-		- [__Beautiful Soup__](materials/python/md/third_party_modules.md#Beautiful-Soup): Парсинг HTML и XML документов;
-		- [__lxml__](materials/python/md/third_party_modules.md#lxml): Обработка XML и HTML;
-		- [__SQLite3__](materials/python/md/third_party_modules.md#sqlite3): Работа с СУБД SQLite;
-		- [__mysql__](materials/python/md/third_party_modules.md#mysql): Работа с СУБД MySQL;
-		- [__psycopg2__](materials/python/md/third_party_modules.md#psycopg2): Работа с СУБД PostgreSQL;
-		- [__Seaborn__](materials/python/md/third_party_modules.md#seaborn): Визуализация данных;
-		- [__Plotly__](materials/python/md/third_party_modules.md#plotly): Создание интерактивных графиков для веб-приложений;
-		- [__Bokeh__](materials/python/md/third_party_modules.md#bokeh): Создание интерактивных графиков для веб-приложений;
-		- [__OpenCV__](materials/python/md/third_party_modules.md#opencv): Компьютерное зрение и обработка изображений;
-		- [__Pillow__](materials/python/md/third_party_modules.md#pillow): Работа с изображениями;
-		- [**Django**](python/django/django.md): веб-фреймворк
-		- [**FastAPI**](python/fastapi/fastapi.md): веб-фреймворк
-- [Glossary](materials/python/md/glossary.md)
-- [OOP](materials/python/md/7_oop.md)
+
+## Пакетные менеджеры
+
+- pip
+- [uv](materials/python/uv.md)
+
+## 📦 Модули
+
+### ✏️ Обработка текста
+
+- [__string__](materials/python/md/text_processing.md#string): Общие строковые операции
+- [__re__](materials/python/md/text_processing.md#re): Операции с регулярными выражениями
+- [__difflib__](materials/python/md/text_processing.md#difflib): Помощники для вычисления дельт
+- [__textwrap__](materials/python/md/text_processing.md#textwrap): Перенос и заполнение текста
+- [__unicodedata__](materials/python/md/text_processing.md#unicodedata): База данных Юникод
+- [__stringprep__](materials/python/md/text_processing.md#stringprep): Подготовка интернет-строки
+- [__readline__](materials/python/md/text_processing.md#readline): Интерфейс чтения GNU
+- [__rlcompleter__](materials/python/md/text_processing.md#rlcompleter): Функция завершения для строки чтения GNU
+
+### 🌀 Двоичные данные
+
+- [__struct__](materials/python/md/binary.md#struct): Интерпретирование байтов, как упакованные двоичные данные
+- [__codecs__](materials/python/md/binary.md#codecs): Реестр кодеков и базовые классыs
+
+### 🌈 Типы данных
+
+- [__datetime__](materials/python/md/datatypes.md#datetime): Основные типы даты и времени;
+- [__zoneinfo__](materials/python/md/datatypes.md#zoneinfo): Поддержка часовых поясов IANA;
+- [__calendar__](materials/python/md/datatypes.md#calendar): Общие функции, связанные с календарем;
+- [__collections__](materials/python/md/datatypes.md#collections): Типы данных контейнера;
+- [__heapq__](materials/python/md/datatypes.md#heapq): Алгоритм очереди в куче;
+- [__bisect__](materials/python/md/datatypes.md#bisect): Алгоритм деления массива пополам;
+- [__array__](materials/python/md/datatypes.md#array): Эффективные массивы числовых значений;
+- [__weakref__](materials/python/md/datatypes.md#weakref): Слабые ссылки;
+- [__types__](materials/python/md/datatypes.md#types): Динамическое создание типов и имена для встроенных типов;
+- [__copy__](materials/python/md/datatypes.md#copy): Операции поверхностного и глубокого копирования;
+- [__pprint__](materials/python/md/datatypes.md#pprint): Симпатичный принтер данных;
+- [__reprlib__](materials/python/md/datatypes.md#reprlib): Альтернативная реализация repr();
+- [__enum__](materials/python/md/datatypes.md#enum): Поддержка перечислений;
+- [__graphlib__](materials/python/md/datatypes.md#graphlib): Функционал для работы с графоподобными структурами;
+
+### 🌵 Числа и математика
+
+- [__numbers__](materials/python/md/numeric.md#numbers): Числовые абстрактные базовые классы;
+- [__math__](materials/python/md/numeric.md#math): Математические функции;
+- [__cmath__](materials/python/md/numeric.md#cmath): Математические функции для комплексных чисел;
+- [__decimal__](materials/python/md/numeric.md#decimal): Десятичная арифметика с фиксированной запятой и с плавающей запятой;
+- [__fractions__](materials/python/md/numeric.md#fractions): Рациональное число;
+- [__random__](materials/python/md/numeric.md#random): Генерация псевдослучайных чисел;
+- [__statistics__](materials/python/md/numeric.md#statistics): Функции математической статистики;
+
+### 🍉 Функциональное программирование
+
+- [__itertools__](materials/python/md/functional.md#itertools): Функции, создающие итераторы для эффективного цикла;
+- [__functools__](materials/python/md/functional.md#functools): Функции высшего порядка и операции над вызываемыми объектами;
+- [__operator__](materials/python/md/functional.md#operator): Стандартные операторы как функции;
+
+### 📁 Каталоги и файлы
+
+- [__pathlib__](materials/python/md/filesys.md#pathlib): Пути к объектно-ориентированной файловой системе;
+- [__fileinput__](materials/python/md/filesys.md#fileinput): Перебор строк из нескольких входных потоков;
+- [__stat__](materials/python/md/filesys.md#stat): Интерпретация stat() результатов;
+- [__filecmp__](materials/python/md/filesys.md#filecmp): Сравнение файлов и каталогов;
+- [__tempfile__](materials/python/md/filesys.md#tempfile): Генерировать временные файлы и каталоги;
+- [__glob__](materials/python/md/filesys.md#glob): Расширение шаблона пути в стиле Unix;
+- [__fnmatch__](materials/python/md/filesys.md#fnmatch): Сопоставление шаблонов имен файлов Unix;
+- [__linecache__](materials/python/md/filesys.md#linecache): Произвольный доступ к текстовым строкам;
+- [__shutil__](materials/python/md/filesys.md#shutil): Высокоуровневые файловые операции;
+
+### 📖 Сохранение данных
+
+- [__pickle__](materials/python/md/persistence.md#pickle): Сериализация;
+- [__copyreg__](materials/python/md/persistence.md#copyreg): Регистрация pickle функций поддержки;
+- [__shelve__](materials/python/md/persistence.md#shelve): Сохранение объектов;
+- [__marshal__](materials/python/md/persistence.md#marshal): Внутренняя сериализация объектов;
+- [__dbm__](materials/python/md/persistence.md#dbm): Интерфейсы к «базам данных» Unix;
+- [__sqlite3__](materials/python/md/persistence.md#sqlite3): Интерфейс DB-API 2.0 для SQLite;
+
+### 🌍 Сжатие и архивирование данных
+
+- [__zlib__](materials/python/md/archiving.md#zlib): Сжатие, совместимое с gzip;
+- [__gzip__](materials/python/md/archiving.md#gzip): Поддержка файлов gzip;
+- [__bz2__](materials/python/md/archiving.md#bz2): Поддержка сжатия bzip2;
+- [__lzma__](materials/python/md/archiving.md#lzma): Сжатие с использованием алгоритма LZMA;
+- [__zipfile__](materials/python/md/archiving.md#zipfile): Работа с ZIP-архивами;
+- [__tarfile__](materials/python/md/archiving.md#tarfile): Чтение и запись файлов tar-архива;
+
+### 📁 Форматы файлов
+
+- [__csv__](materials/python/md/archiving.md#csv): Чтение и запись CSV-файлов;
+- [__configparser__](materials/python/md/archiving.md#configparser): Парсер конфигурационного файла;
+- [__tomllib__](materials/python/md/archiving.md#tomllib): Разбор файлов TOML;
+- [__netrc__](materials/python/md/archiving.md#netrc): обработка файлов netrc;
+- [__plistlib__](materials/python/md/archiving.md#plistlib): Генерация и анализ .plist файлов Apple;
+
+### 🎃 Криптография
+
+- [__hashlib__](materials/python/md/crypto.md#hashlib): Безопасные хэши и дайджесты сообщений;
+- [__hmac__](materials/python/md/crypto.md#hmac): Хеширование ключей для аутентификации сообщений;
+- [__secrets__](materials/python/md/crypto.md#secrets): Генерация безопасных случайных чисел для управления секретами;
+
+### 💻 Службы ОС
+
+- [__os__](materials/python/md/allos.md#os): Различные интерфейсы операционной системы;
+- [__io__](materials/python/md/allos.md#io): Основные инструменты для работы с потоками;
+- [__time__](materials/python/md/allos.md#time): Доступ ко времени и конверсии;
+- [__argparse__](materials/python/md/allos.md#argparse): Анализатор параметров командной строки, аргументов и подкоманд;
+- [__getopt__](materials/python/md/allos.md#): Синтаксический анализатор в стиле C для параметров командной строки;
+- [__logging__](materials/python/md/allos.md#logging): Логирование;
+- [__getpass__](materials/python/md/allos.md#getpass): Портативный ввод пароля;
+- [__curses__](materials/python/md/allos.md#curses): Обработка терминала для отображения символьных ячеек;
+- [__platform__](materials/python/md/allos.md#platform): Доступ к идентификационным данным базовой платформы;
+- [__errno__](materials/python/md/allos.md#errno): Стандартные системные символы ошибок;
+- [__ctypes__](materials/python/md/allos.md#ctypes): Сторонние функции;
+
+### 🧑‍🤝‍🧑 Параллельное выполнение
+
+- [__threading__](materials/python/md/concurrency.md#threading): Потоковый параллелизм;
+- [__multiprocessing__](materials/python/md/concurrency.md#multiprocessing): Параллелизм на основе процессов;
+- [__concurrent__](materials/python/md/concurrency.md#concurrent): запуск параллельных задач;
+- [__subprocess__](materials/python/md/concurrency.md#subprocess): Управление подпроцессами;
+- [__sched__](materials/python/md/concurrency.md#sched): Планировщик событий;
+- [__queue__](materials/python/md/concurrency.md#queue): Класс синхронизированной очереди;
+- [__contextvars__](materials/python/md/concurrency.md#contextvars): Контекстные переменные;
+- [__thread__](materials/python/md/concurrency.md#): Низкоуровневый API многопоточности;
+
+### 🎶 Сети и межпроцессное взаимодействие
+
+- [__asyncio__](materials/python/md/ipc.md#asyncio): Асинхронный ввод-вывод;
+- [__socket__](materials/python/md/ipc.md#socket): Низкоуровневый сетевой интерфейс;
+- [__ssl__](materials/python/md/ipc.md#ssl): Оболочка TLS/SSL для объектов сокетов;
+- [__select__](materials/python/md/ipc.md#select): Ожидание завершения ввода-вывода;
+- [__selectors__](materials/python/md/ipc.md#selectors): Высокоуровневое мультиплексирование ввода-вывода;
+- [__signal__](materials/python/md/ipc.md#signal): Установите обработчики асинхронных событий;
+- [__mmap__](materials/python/md/ipc.md#mmap): Поддержка файлов, отображаемых в памяти;
+
+### 🧲 Обработка данных через Интернет
+
+- [__email__](materials/python/md/netdata.md#email): Пакет обработки электронной почты и MIME;
+- [__json__](materials/python/md/netdata.md#json): Кодер и декодер JSON;
+- [__mailbox__](materials/python/md/netdata.md#mailbox): Работа с почтовыми ящиками различных форматов;
+- [__mimetypes__](materials/python/md/netdata.md#mimetypes): Сопоставление имен файлов с типами MIME;
+- [__base64__](materials/python/md/netdata.md#base64): Кодировки данных Base16, Base32, Base64, Base85;
+- [__binascii__](materials/python/md/netdata.md#binascii): Преобразование между двоичным кодом и ASCII;
+- [__quopri__](materials/python/md/netdata.md#quopri): Кодирование и декодирование MIME-данных, пригодных для печати;
+
+### 🗒️ Обработка структурированной разметки
+
+- [__html__](materials/python/md/markup.md#html): Поддержка языка гипертекстовой разметки;
+- [__xml__](materials/python/md/markup.md#xml): Модули обработки XML;
+
+### 🐊 Интернет протоколы и поддержка
+
+- [__webbrowser__](materials/python/md/internet.md#webbrowser): Контроллер веб-браузера;
+- [__wsgiref__](materials/python/md/internet.md#wsgiref): Утилиты WSGI и эталонная реализация;
+- [__urllib__](materials/python/md/internet.md#urllib): Модули обработки URL-адресов;
+- [__http__](materials/python/md/internet.md#http): HTTP-модули;
+- [__ftplib__](materials/python/md/internet.md#ftplib): Клиент FTP-протокола;
+- [__poplib__](materials/python/md/internet.md#poplib): Клиент протокола POP3;
+- [__imaplib__](materials/python/md/internet.md#imaplib): Клиент протокола IMAP4;
+- [__smtplib__](materials/python/md/internet.md#smtplib): Клиент протокола SMTP;
+- [__uuid__](materials/python/md/internet.md#uuid): Объекты UUID;
+- [__socketserver__](materials/python/md/internet.md#socketserver): Фреймворк для сетевых серверов;
+- [__xmlrpc__](materials/python/md/internet.md#xmlrpc): Серверные и клиентские модули XMLRPC;
+- [__ipaddress__](materials/python/md/internet.md#ipaddress): Библиотека манипуляций IPv4/IPv6;
+
+### 🌶️ Мультимедиа
+
+- [__wave__](materials/python/md/mm.md#wave): Чтение и запись файлов WAV;
+- [__colorsys__](materials/python/md/mm.md#colorsys): Преобразования между цветовыми системами;
+
+### 🌍 Интернализация
+
+- [__gettext__](materials/python/md/i18n.md#gettext): Услуги многоязычной интернационализации;
+- [__locale__](materials/python/md/i18n.md#locale): Услуги по интернационализации;
+
+### 🌍 Рамки программы
+
+- [__turtle__](materials/python/md/frameworks.md#turtle): Графика черепахи;
+- [__cmd__](materials/python/md/frameworks.md#cmd): Поддержка интерпретаторов строко-ориентированных команд;
+- [__shlex__](materials/python/md/frameworks.md#shlex): Простой лексический анализ;
+
+### 💊 Графические инструменты
+
+- [__tkinter__](materials/python/md/tk.md#tkinter): Интерфейс Python для Tcl/Tk;
+
+### ⛺ Инструменты разработки
+
+- [__typing__](materials/python/md/development.md#typing): Аннотации типов;
+- [__pydoc__](materials/python/md/development.md#pydoc): Генератор документации и онлайн-справочная система;
+- [__doctest__](materials/python/md/development.md#doctest): Тест интерактивных примеров;
+- [__2to3__](materials/python/md/development.md#2to3): Автоматический перевод кода Python 2 на 3;
+- [__unittest__](materials/python/md/development.md#unittest): Фреймворк модульного тестирования;
+- [__test__](materials/python/md/development.md#test): Пакет регрессионных тестов для Python;
+
+### 💾 Отладка и профилирование
+
+- [__bdb__](materials/python/md/debug.md#bdb): Фреймворк отладчика;
+- [__faulthandler__](materials/python/md/debug.md#faulthandler): Дамп обратной трассировки Python;
+- [__pdb__](materials/python/md/debug.md#pdb): Отладчик Python;
+- [__timeit__](materials/python/md/debug.md#timeit): Измерение времени выполнения небольших фрагментов кода;
+- [__trace__](materials/python/md/debug.md#trace): Отслеживание или отслеживание выполнения операторов Python;
+- [__tracemalloc__](materials/python/md/debug.md#tracemalloc): Отслеживание распределения памяти;
+
+### 📥 Упаковка и распространение ПО
+
+- [__ensurepip__](materials/python/md/distribution.md#ensurepip): Загрузка pip установщика;
+- [__venv__](materials/python/md/distribution.md#venv): Создание виртуальных сред;
+- [__zipapp__](materials/python/md/distribution.md#zipapp): Управление исполняемыми zip-архивами Python;
+
+### 📈 Время выполнения Python
+
+- [__sys__](materials/python/md/python.md#sys): Параметры и функции, специфичные для системы;
+- [__sysconfig__](materials/python/md/python.md#sysconfig): Информация о конфигурации Python;
+- [__builtins__](materials/python/md/python.md#builtins): Встроенные объекты;
+- [__\_\_main__\_\_](materials/python/md/python.md#main): Среда кода верхнего уровня;
+- [__warnings__](materials/python/md/python.md#warnings): Контроль предупреждения;
+- [__dataclasses__](materials/python/md/python.md#dataclasses): Классы данных;
+- [__contextlib__](materials/python/md/python.md#contextlib): Утилиты для with контекстов операторов;
+- [__abc__](materials/python/md/python.md#abc): Абстрактные базовые классы;
+- [__atexit__](materials/python/md/python.md#atexit): Обработчики выхода;
+- [__traceback__](materials/python/md/python.md#traceback): Распечатать или получить обратную трассировку стека;
+- [__\_\_future__\_\_](materials/python/md/python.md#future): Определения будущих операторов;
+- [__gc__](materials/python/md/python.md#gc): Интерфейс сборщика мусора;
+- [__inspect__](materials/python/md/python.md#inspect): Осмотр живых объектов;
+- [__site__](materials/python/md/python.md#site): Перехватчик конфигурации для конкретного сайта;
+
+### 🎲 Пользовательские интерпретаторы
+
+- [__code__](materials/python/md/custominterp.md#code): Базовые классы интерпретатора;
+- [__codeop__](materials/python/md/custominterp.md#codeop): Скомпилировать код Python;
+
+### 👿 Импорт модулей
+
+- [__zipimport__](materials/python/md/modules.md#zipimport): Импорт модулей из Zip-архивов;
+- [__pkgutil__](materials/python/md/modules.md#pkgutil): Утилита расширения пакета;
+- [__modulefinder__](materials/python/md/modules.md#modulefinder): Найти модули, используемые скриптом;
+- [__runpy__](materials/python/md/modules.md#runpy): Поиск и выполнение модулей Python;
+- [__importlib__](materials/python/md/modules.md#importlib): Реализация import;
+
+### 👼 Языковые службы
+
+- [__ast__](materials/python/md/language.md#ast): Абстрактные синтаксические деревья;
+- [__symtable__](materials/python/md/language.md#symtable): Доступ к таблицам символов компилятора;
+- [__token__](materials/python/md/language.md#token): Константы, используемые с деревьями синтаксического анализа Python;
+- [__keyword__](materials/python/md/language.md#keyword): Тестирование ключевых слов Python;
+- [__tokenize__](materials/python/md/language.md#tokenize): Токенизатор для исходного кода Python;
+- [__tabnanny__](materials/python/md/language.md#tabnanny): Обнаружение неоднозначного отступа;
+- [__pyclbr__](materials/python/md/language.md#pyclbr): Поддержка браузера модуля Python;
+- [__py_compile__](materials/python/md/language.md#py_compile): Скомпилируйте исходные файлы Python;
+- [__compileall__](materials/python/md/language.md#compileall): Байт-компилируемые библиотеки Python;
+- [__dis__](materials/python/md/language.md#dis): Дизассемблер для байт-кода Python;
+- [__pickletools__](materials/python/md/language.md#pickletools): Инструменты для разработчиков Pickle;
+
+### 🌴 Сторонние модули
+
+- [__Numpy__](materials/python/md/third_party_modules.md#numpy): Математические операции с многомерными массивами и матрицами;
+- [__Pandas__](materials/python/md/third_party_modules.md#pandas): Анализ и обработка данных, машинное обучение, статистика;
+- [__Matplotlib__](materials/python/md/third_party_modules.md#matplotlib): Визуализация данных в виде графиков и диаграмм;
+- [__SciPy__](materials/python/md/third_party_modules.md#scipy): Научные и инженерные расчеты (оптимизация, интегрирование, интерполяция, обработка сигналов, статистика);
+- [__TensorFlow__](materials/python/md/third_party_modules.md#tensorflow): Создание, обучение, развертывание моделей машинного обучения;
+- [__Keras__](materials/python/md/third_party_modules.md#keras): Удобный способ создания моделей машинного обучения;
+- [__Scikit-learn__](materials/python/md/third_party_modules.md#scikit-learn): Простые и эффективные инструменты для анализа данных и построения моделей;
+- [__XGBoost__](materials/python/md/third_party_modules.md#XGBoost): Библиотека машинного обучения, основанная на методе градиентного бустинга;
+- [__LightGBM__](materials/python/md/third_party_modules.md#LightGBM): Библиотека градиентного бустинга, разработанная для эффективного и быстрого обучения моделей на больших объемах данных;
+- [__requests__](materials/python/md/third_party_modules.md#requests): Работа с HTTP протоколом;
+- [__Beautiful Soup__](materials/python/md/third_party_modules.md#Beautiful-Soup): Парсинг HTML и XML документов;
+- [__lxml__](materials/python/md/third_party_modules.md#lxml): Обработка XML и HTML;
+- [__SQLite3__](materials/python/md/third_party_modules.md#sqlite3): Работа с СУБД SQLite;
+- [__mysql__](materials/python/md/third_party_modules.md#mysql): Работа с СУБД MySQL;
+- [__psycopg2__](materials/python/md/third_party_modules.md#psycopg2): Работа с СУБД PostgreSQL;
+- [__Seaborn__](materials/python/md/third_party_modules.md#seaborn): Визуализация данных;
+- [__Plotly__](materials/python/md/third_party_modules.md#plotly): Создание интерактивных графиков для веб-приложений;
+- [__Bokeh__](materials/python/md/third_party_modules.md#bokeh): Создание интерактивных графиков для веб-приложений;
+- [__OpenCV__](materials/python/md/third_party_modules.md#opencv): Компьютерное зрение и обработка изображений;
+- [__Pillow__](materials/python/md/third_party_modules.md#pillow): Работа с изображениями;
+- [**Django**](python/django/django.md): веб-фреймворк
+- [**FastAPI**](materials/python/fastapi/fastapi.md): веб-фреймворк
+
+## 🗒️ Словарь
+
+- [Словарь](materials/python/md/glossary.md)
+
+## 🌏 ООП
+
+- [ООП](materials/python/md/7_oop.md)
 
 ## Introduction
 

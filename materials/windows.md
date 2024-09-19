@@ -1,4 +1,4 @@
-# Windows
+# 🪟 Windows
 
 ## Contents
 
