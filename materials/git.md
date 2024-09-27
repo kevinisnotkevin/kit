@@ -1,4 +1,9 @@
+# github/gitlub
+
+github/gitlub - это веб-сервисы основанные на системе Git, позволяют отслеживать полный путь/ жизненный цикл IT-проектов, позволяют хостить свои работы, а также разрабатывать их совместно.
+
 ## Настройка и конфигурация
+
 ```bash
 # Инициализация нового репозитория
 git init
@@ -12,7 +17,9 @@ git config --global <setting_name> "value"
 # Конфигурация настроек Git для конкретного репозитория. Переопределяет глобальные настройки для конкретного репозитория
 git config --local <setting_name> "value"
 ```
+
 ## Операции с файлами
+
 ```bash
 # Статус текущей ветки
 git status
@@ -36,7 +43,9 @@ git diff
 # Разница между двумя коммитами
 git diff <commid_id1> <commit_id2>
 ```
+
 ## Branching and merging
+
 ```bash
 # Список всех веток
 git branch
@@ -61,7 +70,9 @@ git merge <branch_name>
 # Отмена merge при наличии конфликтов
 git merge --abort
 ```
+
 ## Удаленные репозитории
+
 ```bash
 # Список удаленных репозиториев
 git remote
@@ -95,7 +106,9 @@ git push <remote_name> <remote_branch>
 # Принудительная загрузка изменений на удаленный репозиторий
 git push --force <remote_name> <local_branch>
 ```
+
 ## Commits
+
 ```bash
 # История коммитов
 git log
@@ -110,7 +123,9 @@ git log --since=<date>
 # История коммитов до даты
 git log --until=<date>
 ```
+
 ## Tags
+
 ```bash
 # Список тегов
 git tag
@@ -130,7 +145,9 @@ git push <remote_name> --delete <tag_name>
 # Информация о теге
 git show <tag_name>
 ```
+
 ## Commit Management
+
 ```bash
 # Изменение последнего коммита
 git commit --amend

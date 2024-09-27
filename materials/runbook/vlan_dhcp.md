@@ -1,6 +1,6 @@
 # VLAN **и DHCP**
 
-- [Что такое VLAN?](materials/vlan.md)
+- [Что такое VLAN?](materials/networks/vlan.md)
 - [Настройка VLAN](materials/runbook/vlan.md)
 
 # Задача

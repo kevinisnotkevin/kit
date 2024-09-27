@@ -297,10 +297,11 @@ Version: 3.12.3
 - [__Seaborn__](materials/python/md/third_party_modules.md#seaborn): Визуализация данных;
 - [__Plotly__](materials/python/md/third_party_modules.md#plotly): Создание интерактивных графиков для веб-приложений;
 - [__Bokeh__](materials/python/md/third_party_modules.md#bokeh): Создание интерактивных графиков для веб-приложений;
-- [__OpenCV__](materials/python/md/third_party_modules.md#opencv): Компьютерное зрение и обработка изображений;
-- [__Pillow__](materials/python/md/third_party_modules.md#pillow): Работа с изображениями;
+- [__OpenCV__](materials/python/md/third_party_modules.md#opencv): Компьютерное зрение и обработка изображений
+- [__Pillow__](materials/python/md/third_party_modules.md#pillow): Работа с изображениями
 - [**Django**](python/django/django.md): веб-фреймворк
 - [**FastAPI**](materials/python/fastapi/fastapi.md): веб-фреймворк
+- [**SQLModel**](materials/python/sqlmodel.py): Взаимодействие с БД SQL
 
 ## 🗒️ Словарь
 
