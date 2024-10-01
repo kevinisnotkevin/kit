@@ -101,7 +101,7 @@ FROM список_таблиц
 
 Фактическое выполнение инструкций определяется СУБД и порядок из этого списка может значительно отличаться.
 
-### Примеры использования
+## Команды
 
 Вы можете выводить любые строки и числа вместо столбцов:
 
@@ -131,4 +131,21 @@ SELECT member_name, state FROM FamilyMembers;
 
 ```sql
 SELECT DISTINCT town_to FROM Trip;
+```
+
+
+### Создание БД
+
+```bash
+# Создание БД
+CREATE DATABASE dbname;
+
+# Создание пользователя
+CREATE USER dbuser WITH PASSWORD 'password';
+
+# Назначение прав пользователю на БД
+GRANT ALL PRIVILEGES ON DATABASE dbname TO dbuser;
+
+# Удаление пользователя
+DROP ROLE dbuser;
 ```

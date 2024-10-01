@@ -16,6 +16,7 @@ learn by usage
 # 🗑️ Базы данных
 
 - [Введение в базы данных](materials/db.md)
+- [**postgresql**](materials/db/postgresql.md): СУБД 
 
 # 🅰️ Языки программирования
 
@@ -41,21 +42,19 @@ learn by usage
 - [Облачное хранилище](materials/web/cloud_storage.md)
 - [Кэширование](materials/web/caching.md)
 - [robots.txt, htaccess, sitemap и др.](materials/web/famous_files.md)
-
-### 🍼 Основы веб-разработки
-
 - [**HTML**](materials/web/html.md): Язык разметки документов
 - [**XML**](materials/web/xml.md): Расширяемый язык разметки
 - [**AJAX**](materials/web/ajax.md): Технология взаимодействия с сервером без перезагрузки
 - [**JSON**](materials/web/json.md): Структурированный формат данных на основе синтаксиса JS
 - [**CSS**](materials/web/CSS.md): Код стилизации веб-страниц
 - [**LAMP stack**](materials/web/lamp_stack.md): Стек технологий для создания веб-приложений
+- [**WAF**](materials/web/waf.md): Средства фильтрации трафика прикладного уровня
 
 # 💻 DevOps
 
 - [Docker](materials/docker.md)
 - [Linux Containers](materials/lxc.md)
-- [DevOps](materials/devops.md)
+- [**CI/CD**](materials/devops/ci_cd.md): Автоматизация этапов разработки
 - [Git](materials/git.md)
 - [Что такое контейнеризация?](materials/devops/what_are_containers.md)
 
