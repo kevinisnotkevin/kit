@@ -286,3 +286,34 @@ iptables -A INPUT -m string --string "/etc/passwd" -s 0/0 -d localhost -p tcp --
 
 iptables -A INPUT -m string --string "/etc/shadow" -s 0/0 -d localhost -p tcp --dport 80 -j DROP
 ```
+
+## Примеры
+
+```bash
+# Показать текущие правила
+iptables -L
+
+# Вывод таблиц с нумерацией правил
+iptables -L -v -n --line-numbers
+
+# Удаление правила из таблицы filter под номером 3
+iptables -t filter -D INPUT 3
+
+# Блокировать исходящие HTTP-соединения
+iptables -t filter -A OUTPUT -p tcp --dport http -j DROP
+
+# Включить логирование ядром пакетов, проходящих через цепочку INPUT, и добавлением к сообщению префикса DROP INPUT
+iptables -t filters -A INPUT -j LOG --log-prefix "DROP INPUT"
+
+# Разрешить входящие соединения на порт 80
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+
+# Запретить доступ к определенной подсети
+iptables -A INPUT -s 0.0.0.0/24 -j DROP
+
+# Ограничение скорости трафика к новым SSH-соединениям
+iptables -A INPUT -p tcp --dport 22 -m state --state NEW -m limit --limit 3/min -j ACCEPT
+
+# Логирование всех отброшенных пакетов
+iptables -A INPUT -j LOG --log-prefix “Dropped Packet: “ iptables -A INPUT -j DROP
+```
