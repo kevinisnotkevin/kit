@@ -79,7 +79,7 @@ Kubernetes - это не традиционная комплексная сис�
 
 ## 6 Архитектура Kubernetes
 
-![](materials/images/devops/arch_k8s.png)
+![](/materials/images/devops/arch_k8s.png)
 
 **Кластер**
 
