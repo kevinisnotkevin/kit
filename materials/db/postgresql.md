@@ -18,6 +18,22 @@ apt update && apt install postgresql postgresql-contrib
 ```
 - Установка PostgreSQL
 
+## Создание БД
+
+```bash
+# Создание БД
+CREATE DATABASE dbname;
+
+# Создание пользователя
+CREATE USER dbuser WITH PASSWORD 'password';
+
+# Назначение прав пользователю на БД
+GRANT ALL PRIVILEGES ON DATABASE dbname TO dbuser;
+
+# Удаление пользователя
+DROP ROLE dbuser;
+```
+
 ## PSQL
 
 **psql** - это cli для работы с БД postgresql. С помощью psql можно подключаться к серверу postgresql, выполнять sql-запросы, управлять БД, таблицами, пользователями и получать информацию о состоянии системы.

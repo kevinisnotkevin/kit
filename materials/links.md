@@ -161,3 +161,21 @@
 - https://github.com/onceupon/Bash-Oneliner?tab=readme-ov-file#others - bash однострочники
 - https://github.com/bobbyiliev/101-linux-commands-ebook/tree/main - команды линукс
 - https://github.com/bregman-arie/devops-exercises?tab=readme-ov-file - упражнения devops
+
+- В чем отличие REST API от SOAP? Какие протоколы чаще используются для REST и SOAP?
+- Какие протоколы используются при обмене файлами, gRPC, GraphQL?
+- Для чего нужен gRPC, GraphQL?
+- Паттерны архитектуры веб-сервисов
+- Что такое хранилища данных, озера данных, витрины данных?
+- Что такое OLAP?
+- Что такое UML, последовательности, активности?
+- Что такое BPMN 2.0?
+- Что такое User stories и User stories mapping?
+- Что такое opensearch?
+- Что такое ollama?
+
+
+
+
+
+- [Сервис для проектирования БД](https://erd.dbdesigner.net)
