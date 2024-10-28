@@ -10,7 +10,7 @@
 
 **Docker Desktop** - это официальное приложение для упрощения разработки и тестирования контейнеров. Включает виртуальную машину Linux, на которой работает Docker Engine, чтобы поддерживать контейнеры на отличных от Linux платформах. Также включает в себя графический интерфейс. Docker Desktop добавляет к Docker Engine расширенную функциональность.
 
-### 1.1 Установка Docker
+**УСТАНОВКА DOCKER**
 
 ```bash
 curl -sSL https://get.docker.com | sh
@@ -72,9 +72,7 @@ Docker использует «слоистые» файловые системы
 
 ### 3.4 Docker Image
 
-**Docker Image** - это шаблон для создания контейнеров, неизменяемый образ, из которого разворачивается контейнер.
-
-Образ включает код приложения, зависимости, конфигурацию, а также параметры окружения и команду для запуска основного процесса. Образы служат основой для создания контейнеров.
+**Docker Image** - это неизменяемый шаблон для создания контейнеров, который включает код приложения, зависимости, конфигурацию, а также параметры окружения и команду для запуска основного процесса.
 
 Образ можно сравнить со слоёным пирогом: мы накладываем слой файловой системы поверх слоя базового образа и получаем неизменяемый образ. В него можно установить приложение, конфигурации и зависимости. Другие образы могут наследоваться, поэтому если положить сверху слой файлов и закоммитить, то мы получим ещё один неизменяемый образ.
 
@@ -117,6 +115,7 @@ docker image load --input ubuntu.tar
 # Сохранение образа в tar-архив
 docker image save busybox > ubuntu.tar
 ```
+- Управление образами.
 
 ### 3.5 Docker Container
 
@@ -172,13 +171,19 @@ docker container update --cpu-shares 512 -m 300M infinite
 
 ### 3.6 Docker Registy
 
-**Docker Registry** - это репозиторий для хранения и обмена образами.
+**Docker Registry** - это централизованное хранилище, или реестр образов. С помощью него можно хранить и распространять образы контейнеров как внутри компании, так и глобально, а также управлять версиями образов.
 
 Реестр Docker позволяет нескольким пользователям размещать и извлекать образы из центрального хранилища, используя RESTful API. Код реестра, как и сам Docker, - это ПО с открытым исходным кодом. Многие компании создают частные реестры для внутреннего хранения и совместного использования своих собственных образов.
 
 Частный реестр Docker - это сервис, который хранит образы Docker. Их можно запросить у любого демона Docker, у которого есть соответствующий доступ. Этот реестр находится во внутренней сети и не является общедоступным, поэтому считается закрытым.
 
-По умолчанию при установке Docker он ищет образы в Docker Hub, если вы не укажете собственный реестр в настройках Docker.
+По умолчанию при установке Docker он ищет образы в Docker Hub, если не указать собственный реестр в настройках Docker.
+
+Полное имя образа имеет следующий формат `[HOST[:PORT_NUMBER]/]PATH`.
+
+HOST - это опциональное имя хоста Registry. Оно сообщает, где искать образы. Должно соответствовать стандартному формату DNS-имён, но не должно содержать `_`. Если не указать имя хоста, то по умолчанию будет использовано имя публичного Container Registry - `registry-1.docker.io`.
+
+PATH - это путь, который состоит из разделённых знаком `/` компонентов. Каждый компонент может содержать буквы в нижнем регистре, цифры и разделители. Разделителем может служить:
 
 ```bash
 # Вход в регистр
@@ -187,23 +192,23 @@ docker login localhost:5000
 # Выход из реестра
 docker logout localhost:5000
 ```
-- Вход/Выход из реестра
+- Вход/Выход из реестра.
 
 ```bash
 docker search nginx
 docker search --filter stars=3 --no-trunc nginx
 ```
-- Поиск образа в реестре
+- Поиск образа в реестре.
 
 ```bash
 docker run --name my-registry -p 5000:5000 -d --restart always registry:2
 ```
-- Создаем контейнер, который будет являться приватным реестром
+- Создание контейнера, который будет являться приватным реестром.
 
 ```bash
 docker image tag image localhost:5000/image
 ```
-- Меняем тег образов, которые будем закидывать в реестр
+- Меняем тег образов, которые будем закидывать в реестр.
 
 ```bash
 # Загрузка образа в реестр
@@ -212,12 +217,12 @@ docker push localhost:5000/image
 # Выгрузка образа из реестра
 docker pull localhost:5000/nginx
 ```
-- Загрузка/Выгрузка образа из реестра
+- Загрузка/Выгрузка образа из реестра.
 
 ```bash
 curl -X GET localhost:5000/v2/_catalog
 ```
-- Смотрим какие образы есть в частном реестре
+- Смотрим какие образы есть в частном реестре.
 
 ### 3.7 Docker Hub
 
@@ -231,19 +236,7 @@ Docker Hub - это реестр, поддерживаемый Docker Inc. Он 
 
 **Dockerfile** - это конфигурационный файл с инструкциями для сборки Docker-образа.
 
-```dockerfile
-FROM ubuntu:22.04
-RUN apt-get update && apt-get install -y nginx
-COPY myapp /usr/share/nginx/html
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"] 
-```
-- Пример Dockerfile.
-- Создаем образ на основе Ubuntu 22.04, устанавливаем веб-сервер Nginx, копируем содержимое каталога `myapp` в каталог `/usr/share/nginx/html`, сообщаем, что процесс в запущенном контейнере будет слушать порт 80 и запускать сам процесс Nginx соответствующей командой.
-
-Инструкции `FROM`, `RUN`, а также `ADD` создают отдельные слои итогового образа, который содержит изменения файлов относительно предыдущего слоя. Инструкции `EXPOSE` и `CMD` видны в истории изменений образа как слои. Их размер - 0, потому что изменений файлов в таких слоях не происходит, но добавляются метаданные к образу.
-
-Команда `docker build -t mynginx:latest` создаст образ `mynginx:latest` согласно инструкциям в Dockerfile. Контейнер с именем `nginx-container` на базе образа `mynginx:latest`запускается командой `docker run --name nginx-container -p 80:80 mynginx:latest`. Он будет слушать порт `80` на хостовой системе. При запуске контейнера создаётся ещё один перезаписываемый слой, который будет содержать файлы, изменённые в контейнере относительно образа, на базе которого он запущен.
+Инструкции `FROM`, `RUN`, `COPY` и `ADD` участвуют в создании слоёв итогового образа. Другие инструкции отвечают за настройку, описание метаданных и указание действий, которые должны выполняться во время работы контейнера. Они создают отдельные слои итогового образа, который содержит изменения файлов относительно предыдущего слоя. Инструкции `EXPOSE` и `CMD` видны в истории изменений образа как слои. Их размер - 0, потому что изменений файлов в таких слоях не происходит, но добавляются метаданные к образу.
 
 Перезаписываемый слой может содержать временные файлы, создаваемые приложением во время работы в контейнере.
 
@@ -251,32 +244,60 @@ CMD ["nginx", "-g", "daemon off;"]
 
 При удалении контейнера, этот перезаписываемый слой тоже удаляется. Однако исходный образ со всеми его слоями остаётся неизменным.
 
+Финальной инструкцией в любом Dockerfile является `CMD` или `ENTRYPOINT`. `CMD` может быть только одна и она может быть переопределена при старте контейнера командой `docker run`. `CMD` наследует условия установленные инструкцией WORKDIR.
+
+Чтобы создать базовый образ, не основываясь ни на каком другом, то в качестве базового образа следует указать образ `scratch`.
+
+В Dockerfile должна быть указана хотя бы одна из команд `CMD` или `ENTRYPOINT`. Команду `CMD` следует использовать как способ определения аргументов по умолчанию для команды `ENTRYPOINT` или для выполнения специальной команды в контейнере, например, подгрузки и предобработки переменных среды.
+
+Рекомендуется использовать абсолютные пути для исполняемых файлов. Например `/usr/bin/python` вместо `python`, так как переменная `$PATH` в большинстве случаев не подгружается по умолчанию.
+
+```bash
+docker run --command python cont_name
+docker run cont_name python
+```
+Переопределить параметр, выполняемый при запуске контейнера, можно двумя способами.
+
+```bash
+docker run --env KEY1=VALUE1 -e KEY2=VALUE2 cont_name
+```
+- Изменение или добавление переменных среды во время запуска контейнера.
+
+```bash
+docker build --build-arg KEY=VALUE .
+```
+- Передача переменной  в инструкцию `ARG KEY` в сборку образа.
+
 ```dockerfile
-# Базовый образ
+# Базовый образ, с которого начинается сборка.
 FROM image_name:tag
 
-# Активный рабочий каталог. Все последующие команды (COPY, RUN, CMD и др) будут выполнены из этого каталога
+# Создает и устанавливает рабочий каталог. Все последующие команды будут выполнены из этого каталога.
 WORKDIR /path/to/directory
 
-# Копирует в контейнер файлы и папки
+# Копирует файлы из хоста в контейнер.
 COPY host_source_path container_destination_path
 
-# Выполнение команд. Используется для установки в контейнер пакетов. Может быть неограниченное кол-во, но каждая инструкция создает свой слой. Для выполнения цепочки команд рекомендуется использовать &&
+# Добавляет локальные или удаленные файлы и каталоги. Может распаковывать .tar-файлы и загружать данные из URL.
+ADD source_path destination_path
+
+# Выполняет команды внутри контейнера во время сборки образа.
 RUN command1 && command2
 
-# Установка постоянных переменных среды
+# Определение переменных окружения. Эти переменные могут быть использованы в последующих инструкциях Dockerfile, а также в контейнере, запущенном на основе созданного образа.
 ENV KEY=VALUE
+ENV KEY1=VALUE1 KEY2=VALUE2
 
 # Информирование о том, какие порты могут быть использованы приложением внутри контейнера
 EXPOSE port
 
-# Финальной инструкцией в любом Dockerfile является CMD или ENTRYPOINT. CMD может быть только одна и она может быть переопределена при старте контейнера командой docker run. Инструкция CMD наследует условия установленные инструкцией WORKDIR
+# Используется в качестве аргументов для ENTRYPOINT. Итоговая команда запуска контейнера складывается из объединения инструкций ENTRYPOINT + CMD.
 CMD [“executable”, “param1”, “param2”]
 
-# Команда с аргументами для вызова при старте контейнера. Отличается от CMD тем, что аргументы не переопределяются. Может использоваться вместе с CMD
+# Указывает команду, которая будет выполнена при запуске контейнера. Отличается от CMD тем, что аргументы не переопределяются. Значение по умолчанию - /bin/sh -c.
 ENTRYPOINT [“executable”, “param1”, “param2”]
 
-# Задаёт переменные для передачи Docker во время сборки образа
+# Определение переменных на время сборки.
 ARG VARIABLE_NAME=default_value
 
 # Создаёт точку монтирования для работы с постоянным хранилищем
@@ -287,9 +308,6 @@ LABEL key=”value”
 
 # Указание пользователя, под которым будут выполняться команды внутри контейнера
 USER user_name
-
-# Копирует файлы и папки в контейнер, может распаковывать .tar-файлы и загружать данные из URL
-ADD source_path destination_path
 
 # Команда для проверки работы контейнера во время его работы
 HEALTHCHECK options
@@ -306,50 +324,26 @@ SHELL [“/bin/bash”, “-c”]
 # Указание сигнала, который будет отправлен контейнеру для его остановки
 STOPSIGNAL signal
 ```
+- Инструкции Dockerfile.
 
-**ПРИМЕР ИСПОЛЬЗОВАНИЯ DOCKERFILE**
-
-Создадим Docker контейнер в качестве сервера «хостинга файлов» при передаче определенных файлов на целевые системы. Поэтому создадим Dockerfile на основе Ubuntu с работающим сервером Apache и SSH. Благодаря этому мы можем использовать scp для передачи файлов в образ Docker, а Apache позволяет нам размещать файлы и использовать такие инструменты, как Curl, wget и другие, в целевой системе для загрузки необходимых файлов.
+```dockerfile
+FROM ubuntu:22.04
+RUN apt-get update && apt-get install -y nginx
+COPY myapp /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"] 
+```
+- Создаем образ на основе Ubuntu 22.04, устанавливаем веб-сервер Nginx, копируем содержимое каталога `myapp` в каталог `/usr/share/nginx/html`, сообщаем, что процесс в запущенном контейнере будет слушать порт 80 и запускать сам процесс Nginx соответствующей командой.
 
 ```bash
-FROM ubuntu:latest
-
-RUN apt-get update && \
-    apt-get install -y \
-        apache2 \
-        openssh-server \
-        && \
-    rm -rf /var/lib/apt/lists/*
-
-RUN useradd -m docker-user && \
-    echo "docker-user:password" | chpasswd
-
-RUN chown -R docker-user:docker-user /var/www/html && \
-    chown -R docker-user:docker-user /var/run/apache2 && \
-    chown -R docker-user:docker-user /var/log/apache2 && \
-    chown -R docker-user:docker-user /var/lock/apache2 && \
-    usermod -aG sudo docker-user && \
-    echo "docker-user ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
-
-EXPOSE 22 80
-
-CMD service ssh start && /usr/sbin/apache2ctl -D FOREGROUND
+docker build -t mynginx:latest
 ```
-
-После того, как _Dockerfile_ определен, нужно преобразовать его в _image_. С помощью команды _build_ берем каталог с _Dockerfile_, выполняем шаги из _Dockerfile_ и сохраняем _image_ в нашем локальном _Docker Engine_. Если один из шагов завершится неудачно из-за ошибки, создание контейнера будет прервано.
+- Сборка образа `mynginx:latest`. Команда принимает директорию с набором файлов для сборки образа контейнера. Если явно не указывать расположение Dockerfile, то команда `docker build` будет пытаться найти файл с названием Dockerfile в директории контекста. Чтобы указать другое расположение Dockerfile, можно использовать опцию `-f /path/Dockerfile`.
 
 ```bash
-docker build .
+docker run --name nginx-container -p 80:80 mynginx:latest
 ```
-
-После создания _image_ его можно выполнить с помощью _Docker Engine_, что делает его очень эффективным и простым способом запуска контейнера. _Image_ является шаблоном только для чтения и предоставляет файловую систему, необходимую для выполнения и всех параметров. Контейнер можно считать запущенным процессом образа. Когда контейнер должен быть запущен в системе, сначала загружается пакет с соответствующим образом, если он недоступен локально.
-
-```bash
-# Создание образа
-docker run -p 8022:22 -p 8080:80 image_name
-```
-
-Запущен новый контейнер из образа _image\_name_ и сопоставлены порты хоста 22 и 8080 с портами контейнера 22 и 80 соответственно. Контейнер работает в фоновом режиме, что позволяет нам получать доступ к службам SSH и HTTP внутри контейнера, используя указанные порты хоста.
+- Запуск контейнера `nginx-container` на основе созданного образа `mynginx:latest`. Он будет слушать порт `80` на хостовой системе. При запуске контейнера создаётся ещё один перезаписываемый слой, который будет содержать файлы, изменённые в контейнере относительно образа, на базе которого он запущен.
 
 ### 3.9 Docker CLI
 
@@ -646,94 +640,7 @@ Docker устанавливает две собственные цепочки i
 
 ## 7 Docker compose
 
-Docker Compose - это инструмент для определения и запуска многоконтейнерных приложений. Это ключ к упрощению и эффективности разработки и развертывания.
-
-Compose упрощает управление всем стеком приложений, упрощая управление службами, сетями и томами в одном понятном файле конфигурации YAML. Затем с помощью одной команды вы создаете и запускаете все службы из вашего файла конфигурации.
-
-Сочинение работает во всех средах; производство, постановка, разработка, тестирование, а также рабочие процессы CI. Он также имеет команды для управления всем жизненным циклом вашего приложения:
-
-- Запуск, остановка и восстановление служб
-- Просмотр состояния запущенных служб
-- Потоковая передача данных журнала запущенных служб
-- Запуск одноразовой команды для службы
-
-```bash
-# Create and start containers defined in a docker-compose.yml file. This command reads the docker-compose.yml file and starts the defined services in the background.
-docker compose up
-
-# Stop and remove containers defined in a docker-compose.yml file. This command stops and removes the containers, networks and volumes defined in the .yml file.
-docker compose down
-
-# Build or rebuild services. This command builds or rebuilds the Docker images for the services defined in the docker-compose.yml file.
-docker compose build
-
-# List containers for a specific Docker Compose project. This command lists the containers for the services defined in the docker-compose.yml file.
-docker compose ps
-
-# View logs for services. This command shows the logs for all services defined in the docker-compose.yml file.
-docker compose logs
-
-# Scale services to a specific number of containers
-docker compose up -d --scale service_name=number_of_containers
-
-# Run a one-time command in a service
-docker compose run service_name command
-
-# List all volumes. Docker Compose creates volumes for services. This command shows it
-docker volume ls
-
-# Pause a service. This command pauses the specified service
-docker volume pause service_name
-
-# Unpause a service
-docker volume unpause service_name
-
-# View details of a service
-docker compose ps service_name
-```
-
-```dockercompose
-# Specifies the version of the Docker Compose file format.
-version: ‘3.8’
-
-# Defines the services/containers that make up the application
-services:
-	web:
-		image: nginx:latest
-
-# Configures custom networks for the application
-networks:
-	my_network:
-		driver: bridge
-
-# Defines named volumes that the services can use
-volumes:
-	my_volume:
-
-# Sets environment variables for a service
-environment:
-	- NODE_ENV=production
-
-# Maps host ports to container ports
-ports:
-	- “8080:80”
-
-# Specifies dependencies between services, ensuring one service starts before another
-depends_on:
-	- db
-
-# Configures the build context and Dockerfile for a service
-build:
-	context: .
-	dockerfile: Dockerfile.dev
-
-# Mounts volumes from another service or container
-volumes_from:
-	- service_name
-
-# Overrides the default command specified in the Docker image.
-command: [“npm”, “start”]
-```
+- [Подробнее про Docker Compose](/materials/devops/docker_compose.md)
 
 ## 8 Практика
 
@@ -857,3 +764,13 @@ networks:
 			config:
 				- subnet: 172.20.0.0/16
 ```
+
+### Dockerfile no root
+
+```dockerfile
+FROM python
+
+RUN addgroup --system app && adduser --system --group app && chown -R app:app /app/
+USER app
+```
+- Добавление пользователя и назначение его на каталог приложения.
