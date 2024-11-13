@@ -173,6 +173,7 @@
 - Что такое User stories и User stories mapping?
 - Что такое opensearch?
 - Что такое ollama?
+- HTTP3?
 
 
 
