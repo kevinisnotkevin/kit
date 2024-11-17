@@ -689,7 +689,7 @@ time_intervals:
 	- `years`: Годы.
 	- `location`: Часовой пояс интервала времени в формате IANA.
 
-## Docker compose
+## Example
 
 ```yml
 services:
@@ -703,11 +703,11 @@ services:
       - "--storage.tsdb.retention.size=0"
       - "--storage.tsdb.wal-compression"
       - "--web.listen-address=${PM_HOST}:${PM_PORT}"
-      - "--config.auto-reload-interval=30s"
       - "--log.level=info"
       - "--log.format=logfmt"
     volumes:
       - "./prometheus.yml:/etc/prometheus/prometheus.yml"
+      - "./alert.rules.yml:/etc/prometheus/alert.rules.yml"
       - "${PM_HOME_DIR}/data:/prometheus"
       - "${PM_HOME_DIR}/logs:/var/log/prometheus"
     healthcheck:
@@ -721,11 +721,124 @@ services:
   alertmanager:
     image: quay.io/prometheus/alertmanager:${AM_VERSION}
     container_name: alertmanager
+    command:
+      - "--config.file=/etc/alertmanager/alertmanager.yml"
+      - "--storage.path=data/"
+      - "--data.retention=120h"
+      - "--web.listen-address=:${AM_PORT}"
+      - "--log.level=info"
+      - "--log.format=logfmt"
+    volumes:
+      - "./alertmanager:/etc/alertmanager"
+      - "${AM_HOME_DIR}/data:/alertmanager"
     networks:
       monitoring:
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "--quiet", "${AM_HOST}:${AM_PORT}/-/ready"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
 
 networks:
   monitoring:
     external: true
 ```
-- Пример конфигурации `prometheus` и `alertmanager` в docker compose с healthcheck для prometheus.
+- Пример конфигурации `prometheus` и `alertmanager` в docker compose с healthcheck.
+
+```yml
+global:
+  scrape_interval: 1m
+  evaluation_interval: 1m
+  scrape_timeout: 10s
+  rule_query_offset: 0s
+  query_log_file: "/var/log/prometheus/promql.log"
+  scrape_failure_log_file: "/var/log/prometheus/scrape_failure.log"
+  sample_limit: 0
+  label_limit: 0
+  label_name_length_limit: 0
+  label_value_length_limit: 0
+  target_limit: 0
+  keep_dropped_targets: 0
+  body_size_limit: 0
+  metric_name_validation_scheme: "legacy"
+  scrape_protocols: 
+    - "OpenMetricsText1.0.0"
+    - "OpenMetricsText0.0.1"
+    - "PrometheusText0.0.4"
+
+  external_labels:
+    monitor: "main"
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+          - "alertmanager:9093"
+
+rule_files:
+  - "/etc/prometheus/alert.rules.yml"
+
+scrape_configs:
+  - job_name: "prometheus"
+    metrics_path: "/metrics"
+    static_configs:
+      - targets:
+          - "localhost:9090"
+
+  - job_name: "traefik"
+    metrics_path: "/metrics"
+    static_configs:
+      - targets:
+          - "traefik:81"
+
+  - job_name: "node"
+    metrics_path: "/metrics"
+    static_configs:
+      - targets:
+          - "node_exporter:9100"
+
+  - job_name: "cadvisor"
+    metrics_path: "/metrics"
+    static_configs:
+      - targets:
+          - "cadvisor:9093"
+```
+- Пример конфигурации prometheus.
+
+```yml
+groups:
+  - name: alerts
+    rules:
+      - alert: HighMemoryUsage
+        expr: node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes < 0.20
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "High memory usage detected on {{ $labels.instance }}"
+          description: "Available memory is less than 20%."
+```
+- Пример правила.
+
+```yml
+global:
+  resolve_timeout: 5m
+
+route:
+  receiver: "telegram"
+  group_wait: 30s
+  group_interval: 1m
+  repeat_interval: 1m 
+
+templates:
+  - "/etc/alertmanager/templates/*.tmpl"
+
+receivers:
+  - name: "telegram"
+    telegram_configs:
+      - bot_token_file: "/etc/alertmanager/bot_token"
+        chat_id: 10293184
+        message: '{{ template "telegram.default.message" . }}'
+```
+- Пример конфигурации `alertmanager`.
