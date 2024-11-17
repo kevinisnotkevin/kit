@@ -1,4 +1,4 @@
-# TRAEFIK
+# Traefik
 
 **Traefik** - это прокси-сервер с открытым исходным кодом, который включает динамическую настройку, автоматическое обнаружение служб, поддержку серверных частей и протоколов.
 
@@ -497,14 +497,6 @@ echo $(htpasswd -nB username) | sed -e s/\\$/\\$\\$/g
 1. Включить `dashboard` и `insecure` в `api`.
 2. Подключиться к 8080 порту.
 
-## CLI
-
-```bash
-traefik healthcheck
-```
-- Вызывает `/ping` для проверки работоспособности traefik. Должен быть включен api.
-- Можно использовать с `docker healthcheck`.
-
 ## API
 
 ```yml
@@ -565,3 +557,41 @@ accesslog:
 - `statusCodes`: Разрешенный список статус кодов.
 - `retryAttempts`: Сохранять, если есть повторные попытки доступа.
 - `minDuration`: Сохранять, если запрос вышел за указанное время.
+
+## Metrics
+
+```yml
+metrics:
+  addInternals: false  # (default)
+  prometheus:
+    buckets:  # (default)
+      - 0.1
+      - 0.3
+      - 1.2
+      - 5.0
+    addEntryPointsLabels: true  # (default)
+    addRoutersLabels: false  # (default)
+    addServicesLabels: true  # (default)
+    entryPoint: traefik  # (default)
+    manualRouting: false  # (default)
+    headerLabels:
+      useragent: User-Agent
+```
+- `addInternals`: Параметр включает метрики для внутренних ресурсов (Например, `ping@internals`).
+- `prometheus`: Параметр включает prometheus.
+- `buckets`: Параметр определяет интервалы времени в секундах, которые используются для измерения времени отклика в виде гистограмм. Prometheus считает, сколько запросов укладывается в каждый указанный интервал времени.
+- `addEntryPointsLabels`: Параметр добавляет лейбл точки входа к метрикам, что позволяет анализировать метрики по каждой точке входа.
+- `addRoutersLabels`: Параметр добавляет лейбл роутера к метрикам, что позволяет анализировать метрики по каждому роутеру.
+- `addServicesLabels`: Параметр добавляет лейбл сервиса к метрикам, что позволяет анализировать метрики по каждому сервису.
+- `entryPoint`: Параметр определяет entrypoint, на котором будут доступны метрики для prometheus.
+- `manualRouting`: Параметр отключает стандартный роутер, который traefik использует для обслуживания метрик с помощью сервиса `prometheus@internal`. Это позволяет указать другой путь, порт, условие доступа к меткам.
+- `headerLabels`: Параметр позволяет добавлять дополнительные лейблы к метрикам `requests_total`, которые будут иметь значения из http заголовков. Traefik будет брать значения нужных заголовков из запросов или оставлять значения пустыми.
+
+## Monitoring example
+
+```yml
+"traefik.http.routers.prometheus.rule=Path(`/metrics`)"
+"traefik.http.routers.prometheus.entrypoints=web"
+"traefik.http.services.prometheus.loadbalancer.server.port=8000"
+```
+- Настройка параметров traefik для эндпоинта метрик.

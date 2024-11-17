@@ -852,6 +852,7 @@ deactivate
 - [**SQLModel**](materials/python/sqlmodel.py): Взаимодействие с БД SQL
 - [**Paramiko**](materials/python/paramiko.md): Реализация протокола SSHv2
 - [**Python-dotenv**](materials/python/python_dotenv.md): Переменные окружения
+- [**Pydantic**](/materials/python/pydantic/pydantic.md): Валидация данных
 
 ## 🗒️ Словарь
 

@@ -44,17 +44,3 @@
 		1. Назначить права доступа для нового пользователя, таким образом на директорию `Data`, чтобы результат работы команды `ls` был отрицательным
 		2. Залогиниться новым пользователем, проверить работу 12 пункта, пояснить вывод команды `ls`
 		3. Проверить работу после перезапуска системы, что все настройки сохранились
-5. Доп
-[6.1. Утилита SG](https://www.notion.so/6-1-SG-97f9006c8d2b42029d9d670abbaef423?pvs=21)
-
-[6.2. Использование команды sudo в Linux](https://www.notion.so/6-2-sudo-Linux-a62ce9e450e943059a3755745904d0f9?pvs=21)
-
-[6.3. S**tdin, Stdout и Stderr**](https://www.notion.so/6-3-Stdin-Stdout-Stderr-0d93ea0762b54b109dc7ade2c441ee55?pvs=21)
-
-[6.4. Установка и настройка сервера SSH в Linux](https://www.notion.so/6-4-SSH-Linux-2a24ff1c0d1346bab94f3b6d2ac2f423?pvs=21)
-
-[_**6.5. Установка и настройка Putty**_](https://www.notion.so/6-5-Putty-0fa79e88a0af44a1b2b675088008e685?pvs=21)
-
-[6.6. VLAN](https://www.notion.so/6-6-VLAN-1bf8b262629343dfbd67b4090c9d270c?pvs=21)
-
-[**6.7. Полезные и опасные команды (fork-бомба)**](https://www.notion.so/6-7-fork-ff93367a19c045d6a751226a82aba24a?pvs=21)
