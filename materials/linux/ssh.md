@@ -87,6 +87,18 @@ apt install ssh  # Установка ssh
 ```
 - Установка.
 
+## Разрешения
+
+```bash
+chown -R $USER:$USER ~/.ssh
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+chmod 400 ~/.ssh/id_rsa
+chmod 644 ~/.ssh/id_rsa.pub
+chmod 600 ~/.ssh/known_hosts
+```
+- рекомендуемые разрешения ssh файлов
+
 ## Примеры
 
 ```
@@ -112,15 +124,6 @@ ps -ef | grep ssh-agent
 ssh-add -L -
 ```
 - Отладочные команды.
-
-```bash
-journalctl -u sshd.service
-journalctl /usr/bin/sshd
-journalctl -u "sshd*"
-journalctl | grep -i ssh
-journalctl | grep -i 'Failed password for'
-```
-- Способы вывода логов ssh.
 
 ## Параметры конфигураций
 
@@ -807,3 +810,10 @@ sudo systemctl restart sshd
 Помните коды, которые генерируются на начальном этапе? Вы можете использовать аварийный скретч-код в качестве маркера для входа в систему. Каждый скретч-код можно использовать только один раз. Сохраните его в надежном месте, чтобы он мог быть использован в нужный момент.
 
 Коды сохраняются в файле ~/.google_authenticator.
+
+## практика
+
+- [Лаба: SSH](materials/labs/ssh/lab_2.md)
+- [**sshprank**](materials/linux/sshprank.md): Утилита для тестирование на проникновение в систему с использованием SSH
+- [Лаба: sshprank](materials/labs/linux_labs/lab_18.md)
+- [Лаба: sshprank](materials/labs/lab_sshprank.md)

@@ -201,7 +201,7 @@ docker container rename infinite infinity
 docker container update --cpu-shares 512 -m 300M infinite
 ```
 
-### 3.6 Docker Registy
+### 3.6 Docker Registry
 
 **Docker Registry** - это централизованное хранилище, или реестр образов. С помощью него можно хранить и распространять образы контейнеров как внутри компании, так и глобально, а также управлять версиями образов.
 
@@ -238,7 +238,7 @@ docker run --name my-registry -p 5000:5000 -d --restart always registry:2
 - Создание контейнера, который будет являться приватным реестром.
 
 ```bash
-docker image tag image localhost:5000/image
+docker tag image localhost:5000/image
 ```
 - Меняем тег образов, которые будем закидывать в реестр.
 

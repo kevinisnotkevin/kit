@@ -647,7 +647,7 @@ deactivate
 - [__marshal__](materials/python/md/persistence.md#marshal): Внутренняя сериализация объектов;
 - [__dbm__](materials/python/md/persistence.md#dbm): Интерфейсы к «базам данных» Unix;
 - [__sqlite3__](materials/python/md/persistence.md#sqlite3): Интерфейс DB-API 2.0 для SQLite
-- [**psycopg**](materials/python/psycopg.md): PostgreSQL
+- [**Asyncpg, psycopg2, SQLAlchemy**](/materials/python/postgresql.md): Библиотеки для работы с PostgreSQL
 
 ### 🌍 Сжатие и архивирование данных
 
@@ -780,6 +780,7 @@ deactivate
 - [__ensurepip__](materials/python/md/distribution.md#ensurepip): Загрузка pip установщика;
 - [__venv__](materials/python/md/distribution.md#venv): Создание виртуальных сред;
 - [__zipapp__](materials/python/md/distribution.md#zipapp): Управление исполняемыми zip-архивами Python;
+- [**poetry**](/materials/python/poetry.md): управление зависимостями и сборками пакетов
 
 ### 📈 Время выполнения Python
 
@@ -841,7 +842,6 @@ deactivate
 - [__lxml__](materials/python/md/third_party_modules.md#lxml): Обработка XML и HTML;
 - [__SQLite3__](materials/python/md/third_party_modules.md#sqlite3): Работа с СУБД SQLite;
 - [__mysql__](materials/python/md/third_party_modules.md#mysql): Работа с СУБД MySQL;
-- [__psycopg2__](materials/python/md/third_party_modules.md#psycopg2): Работа с СУБД PostgreSQL;
 - [__Seaborn__](materials/python/md/third_party_modules.md#seaborn): Визуализация данных;
 - [__Plotly__](materials/python/md/third_party_modules.md#plotly): Создание интерактивных графиков для веб-приложений;
 - [__Bokeh__](materials/python/md/third_party_modules.md#bokeh): Создание интерактивных графиков для веб-приложений;

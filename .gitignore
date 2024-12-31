@@ -1,3 +1,5 @@
-.obsidian
-notes*
+.obsidian/
 .gitignore
+*.canvas
+.git
+todo
