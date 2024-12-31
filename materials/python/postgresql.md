@@ -184,13 +184,114 @@ async for row in conn.map('SELECT * FROM users', some_function):
 - После завершения работы с соединением оно возвращается обратно в пул и становится доступным для других запросов.
 - Если кол-во активных соединений достигает максимального значения, то последующие запросы ждут освобождения соединений. Если соединения долгое время не используются, их число может уменьшаться до минимального уровня (Если включен таймаут).
 
-# sqlalchemy
+# SQLAlchemy
 
 **sqlalchemy** - это библиотека для работы с БД (Postgresql, MySQL, SQLite, Oracle).
 
 - Включает два компонента: core, ORM
 - core предоставляет низкоуровневый доступ к БД для работы с sql запросами через обьектную модель и ручного создания запросов
 - ORM предоставляет возможность работать через ООП
+
+## подключение к бд
+
+```python
+from sqlalchemy import create_engine
+from sqlalchemy.ext.asyncio import create_async_engine
+
+sync_engine = create_engine(
+	url = "postgresql+psycopg://user:pass@host/db",
+	echo = True,
+	pool_size = 5,
+	max_overflow = 10
+)
+
+async_engine = create_async_engine(
+	url = "postgresql+asyncpg://user:pass@host/db",
+	echo = True,
+	pool_size = 5,
+	max_overflow = 10
+)
+```
+
+## сессии
+
+```python
+from sqlalchemy.orm import sessionmaker
+
+
+session_factory = sessionmaker(sync_engine)
+
+
+with session_factory() as session: ...
+```
+- синхронная сессия
+
+```python
+from sqlalchemy.ext.asyncio import AsyncSession
+
+
+async with AsyncSession(async_engine) as session:
+	async with session.begin(): ...
+```
+- асинхронная сессия
+
+## декларативные модели
+
+```python
+from sqlalchemy.orm import DeclarativeBase
+
+
+class Base(DeclarativeBase): pass  # создание базового класса
+
+
+class User(Base):
+	__tablename__ = "users"
+
+	id:
+```
+
+## crud
+
+```python
+with ... as session:
+	# создание
+	user = User(name = "user 1")
+	session.add(user)
+	session.commit()
+
+	# чтение
+	user = session.query(User).filter_by(name = "user 1").first()
+
+	# обновление
+	user.name = "user 1 upd"
+	session.commit()
+
+	# удаление
+	session.delete(user)
+	session.commit()
+```
+
+## core
+
+```python
+from sqlalchemy import Table, Column, MetaData
+
+
+metadata_obj = MetaData()
+
+
+users = Table(
+	"users",
+	metadata_obj,
+	Column("id", Integer, primary_key = True),
+	Column("name", String)
+)
+
+
+with sync_engine.connect() as session:
+	result = session.execute(users.select())
+	for row in result: ...
+```
 
 # Сравнение модулей
 
